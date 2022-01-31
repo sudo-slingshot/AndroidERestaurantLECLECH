@@ -17,18 +17,21 @@ class HomeActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.appetizers.setOnClickListener {
-            Toast.makeText(this, "Vous avez sélectionné : Menu d'entrées ", Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this, "Vous avez sélectionné : Menu d'entrées ", Toast.LENGTH_SHORT).show()
             changeActivity(MealType.APPETIZERS)
+            Log.e("Closure tag", "Home Activity Closed")
         }
 
         binding.mainCourses.setOnClickListener {
-            Toast.makeText(this, "Vous avez sélectionné : Menu des plats principaux", Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this, "Vous avez sélectionné : Menu des plats principaux", Toast.LENGTH_SHORT).show()
             changeActivity(MealType.MAIN_COURSES)
+            Log.e("Closure tag", "Home Activity Closed")
         }
 
         binding.desserts.setOnClickListener {
-            Toast.makeText(this, "Vous avez sélectionné : Menu des desserts", Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this, "Vous avez sélectionné : Menu des desserts", Toast.LENGTH_SHORT).show()
             changeActivity(MealType.DESSERTS)
+            Log.e("Closure tag", "Home Activity Closed")
         }
 
     }
