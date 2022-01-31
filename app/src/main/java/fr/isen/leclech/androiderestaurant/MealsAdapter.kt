@@ -20,10 +20,10 @@ class MealsAdapter(private val entries: List<Dish>, val itemClickListener: (Dish
             title.text=meal.name
             val imagepath = meal.images.first()
             if(imagepath.isNotEmpty()){
-                Picasso.get().load(imagepath).into(image)
+                Picasso.get().load(imagepath).resize(50,50).centerCrop().into(image)
             }
             else{
-                Picasso.get().load("https://static.jow.fr/750x750/recipes/rEHe873YT9.jpg").into(image)
+                Picasso.get().load("https://static.jow.fr/750x750/recipes/rEHe873YT9.jpg").resize(50,50).centerCrop().into(image)
             }
 
             price.text="${meal.prices.first().price} €"
