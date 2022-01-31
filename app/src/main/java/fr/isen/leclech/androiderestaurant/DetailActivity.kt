@@ -13,10 +13,11 @@ class DetailActivity : AppCompatActivity() {
         binding = ActivityDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         currentDish = intent.getSerializableExtra(MealsActivity.SELECTED_ITEM) as? Dish
-        setupTitle()
+        showcontent()
     }
 
-    private fun setupTitle() {
+    private fun showcontent() {
         binding.title.text = currentDish?.name
+        binding.ingredients.text = currentDish?.ingredients?.map{ it.name }?.joinToString(", ")
     }
 }
