@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView;
 import fr.isen.leclech.androiderestaurant.databinding.CellMealBinding;
 
+
 class MealsAdapter(private val entries: List<Dish>, val itemClickListener: (Dish) -> Unit): RecyclerView.Adapter<MealsAdapter.MealsViewHolder>() {
     class MealsViewHolder(binding:CellMealBinding): RecyclerView.ViewHolder(binding.root){
         val title=binding.mealTitle

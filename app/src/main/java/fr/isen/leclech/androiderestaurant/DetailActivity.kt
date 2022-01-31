@@ -3,6 +3,7 @@ package fr.isen.leclech.androiderestaurant
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import fr.isen.leclech.androiderestaurant.databinding.ActivityDetailsBinding
+import fr.isen.leclech.androiderestaurant.Dish
 
 class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailsBinding

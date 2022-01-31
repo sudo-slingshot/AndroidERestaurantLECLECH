@@ -100,11 +100,11 @@ class MealsActivity : AppCompatActivity() {
 
     private fun showDetail(item: Dish) {
         val intent = Intent(this, DetailActivity::class.java)
-        intent.putExtra(MealsActivity.SELECTED_ITEM, item)
+        intent.putExtra(SELECTED_ITEM, item.name)
         startActivity(intent)
     }
 
     companion object{
-        const val SELECTED_ITEM=""
+        const val SELECTED_ITEM="SELECTED_ITEM"
     }
 }
