@@ -19,8 +19,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/MealsRecyclerView"
-        android:layout_width="287dp"
-        android:layout_height="526dp"
+        android:layout_width="415dp"
+        android:layout_height="533dp"
         android:layout_marginTop="50dp"
         android:layout_marginBottom="45dp"
         app:layout_constraintBottom_toBottomOf="parent"
