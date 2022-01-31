@@ -5,9 +5,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView;
 import fr.isen.leclech.androiderestaurant.databinding.CellMealBinding;
 
-class MealsAdapter(private val entries: List<String>): RecyclerView.Adapter<MealsAdapter.MealsViewHolder>() {
+class MealsAdapter(private val entries: List<String>, val itemClickListener: (String) -> Unit): RecyclerView.Adapter<MealsAdapter.MealsViewHolder>() {
     class MealsViewHolder(binding:CellMealBinding): RecyclerView.ViewHolder(binding.root){
         val title=binding.mealTitle
+        val layout = binding.root
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MealsViewHolder {
@@ -16,7 +17,12 @@ class MealsAdapter(private val entries: List<String>): RecyclerView.Adapter<Meal
     }
 
     override fun onBindViewHolder(holder: MealsViewHolder, position: Int) {
-        holder.title.text = entries[position]
+        val item = entries[position]
+        holder.title.text = item
+        holder.layout.setOnClickListener {
+            itemClickListener.invoke(item)
+        }
+
     }
 
     override fun getItemCount(): Int = entries.count()
