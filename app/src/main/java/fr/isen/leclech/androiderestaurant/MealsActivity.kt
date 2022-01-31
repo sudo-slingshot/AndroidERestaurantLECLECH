@@ -100,7 +100,7 @@ class MealsActivity : AppCompatActivity() {
 
     private fun showDetail(item: Dish) {
         val intent = Intent(this, DetailActivity::class.java)
-        intent.putExtra(SELECTED_ITEM, item.name)
+        intent.putExtra(SELECTED_ITEM, item)
         startActivity(intent)
     }
 

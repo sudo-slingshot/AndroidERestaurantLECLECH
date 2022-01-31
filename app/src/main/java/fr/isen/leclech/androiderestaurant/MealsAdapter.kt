@@ -10,6 +10,9 @@ class MealsAdapter(private val entries: List<Dish>, val itemClickListener: (Dish
     class MealsViewHolder(binding:CellMealBinding): RecyclerView.ViewHolder(binding.root){
         val title=binding.mealTitle
         val layout = binding.root
+        fun bind (meal:Dish){
+            title.text=meal.name
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MealsViewHolder {
@@ -19,11 +22,11 @@ class MealsAdapter(private val entries: List<Dish>, val itemClickListener: (Dish
 
     override fun onBindViewHolder(holder: MealsViewHolder, position: Int) {
         val item = entries[position]
-        holder.title.text = item.name
+        //holder.title.text = item.name
         holder.layout.setOnClickListener {
             itemClickListener.invoke(item)
         }
-
+        holder.bind(item)
     }
 
     override fun getItemCount(): Int = entries.count()
