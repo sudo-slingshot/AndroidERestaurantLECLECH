@@ -23,7 +23,7 @@ class PhotoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val url = arguments?.getString(URL)
-        url?.let { Picasso.get().load(url).into(binding.photo) }
+        url?.let { if (url.isNotEmpty()) Picasso.get().load(url).into(binding.photo) }
     }
 
     companion object{
