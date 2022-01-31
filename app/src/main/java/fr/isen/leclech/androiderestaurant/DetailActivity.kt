@@ -19,5 +19,6 @@ class DetailActivity : AppCompatActivity() {
     private fun showcontent() {
         binding.title.text = currentDish?.name
         binding.ingredients.text = currentDish?.ingredients?.map{ it.name }?.joinToString(", ")
+        binding.viewPager.adapter=currentDish?.images?.let { PhotoAdapter(this, it) }
     }
 }
