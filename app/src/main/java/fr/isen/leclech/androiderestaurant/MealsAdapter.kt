@@ -12,11 +12,20 @@ import java.lang.System.load
 class MealsAdapter(private val entries: List<Dish>, val itemClickListener: (Dish) -> Unit): RecyclerView.Adapter<MealsAdapter.MealsViewHolder>() {
     class MealsViewHolder(binding:CellMealBinding): RecyclerView.ViewHolder(binding.root){
         val title=binding.mealTitle
-        //val image=binding.mealImage
+        val image=binding.mealImage
         val price= binding.mealPrice
         val layout = binding.root
+
         fun bind (meal:Dish){
             title.text=meal.name
+            val imagepath = meal.images.first()
+            if(imagepath.isNotEmpty()){
+                Picasso.get().load(imagepath).into(image)
+            }
+            else{
+                Picasso.get().load("https://static.jow.fr/750x750/recipes/rEHe873YT9.jpg").into(image)
+            }
+
             price.text="${meal.prices.first().price} €"
         }
     }
