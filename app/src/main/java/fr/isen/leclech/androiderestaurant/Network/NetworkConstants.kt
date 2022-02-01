@@ -1,4 +1,4 @@
-package fr.isen.leclech.androiderestaurant
+package fr.isen.leclech.androiderestaurant.Network
 
 class NetworkConstants {
     companion object {

@@ -1,4 +1,4 @@
-package fr.isen.leclech.androiderestaurant
+package fr.isen.leclech.androiderestaurant.Detail
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -27,7 +27,8 @@ class PhotoFragment : Fragment() {
     }
 
     companion object{
-        fun newinstance(url: String)=PhotoFragment().apply { arguments=Bundle().apply{putString(URL,url)} }
+        fun newinstance(url: String)=
+            PhotoFragment().apply { arguments=Bundle().apply{putString(URL,url)} }
         const val URL = "URL"
     }
 }

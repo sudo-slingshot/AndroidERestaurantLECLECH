@@ -14,7 +14,7 @@
             android:name=".MealsActivity"
             android:exported="false" />
         <activity
-            android:name=".DetailActivity"
+            android:name=".Detail.DetailActivity"
             android:exported="false" />
         <activity
 

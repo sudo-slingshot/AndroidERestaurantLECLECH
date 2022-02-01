@@ -1,7 +1,9 @@
-package fr.isen.leclech.androiderestaurant
+package fr.isen.leclech.androiderestaurant.Detail
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import fr.isen.leclech.androiderestaurant.Network.Dish
+import fr.isen.leclech.androiderestaurant.MealsActivity
 import fr.isen.leclech.androiderestaurant.databinding.ActivityDetailsBinding
 
 

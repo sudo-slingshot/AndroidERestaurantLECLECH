@@ -1,4 +1,4 @@
-package fr.isen.leclech.androiderestaurant
+package fr.isen.leclech.androiderestaurant.Detail
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment

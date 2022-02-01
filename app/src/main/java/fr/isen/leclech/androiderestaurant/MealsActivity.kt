@@ -9,6 +9,10 @@ import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.google.gson.GsonBuilder
+import fr.isen.leclech.androiderestaurant.Detail.DetailActivity
+import fr.isen.leclech.androiderestaurant.Network.Dish
+import fr.isen.leclech.androiderestaurant.Network.MenuResult
+import fr.isen.leclech.androiderestaurant.Network.NetworkConstants
 import fr.isen.leclech.androiderestaurant.databinding.ActivityMealsBinding
 import org.json.JSONObject
 

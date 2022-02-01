@@ -1,4 +1,4 @@
-package fr.isen.leclech.androiderestaurant
+package fr.isen.leclech.androiderestaurant.Network
 
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
