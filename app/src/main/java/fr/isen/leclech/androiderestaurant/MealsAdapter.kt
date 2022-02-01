@@ -18,12 +18,12 @@ class MealsAdapter(private val entries: List<Dish>, val itemClickListener: (Dish
         fun bind (meal: Dish){
             title.text=meal.name
             val imagepath = meal.images.first()
-            if(imagepath.isNotEmpty()){
-                Picasso.get().load(imagepath).resize(50,50).centerCrop().into(image)
-            }
-            else{
-                Picasso.get().load("https://static.jow.fr/750x750/recipes/rEHe873YT9.jpg").resize(50,50).centerCrop().into(image)
-            }
+            //if(imagepath.isNotEmpty()){
+                //Picasso.get().load(imagepath).resize(50,50).centerCrop().into(image)
+            //}
+            //else{
+                Picasso.get().load(imagepath).placeholder(R.drawable.no_photo_white).resize(50,50).centerCrop().into(image)
+            //}
 
             price.text="${meal.prices.first().price} €"
         }
