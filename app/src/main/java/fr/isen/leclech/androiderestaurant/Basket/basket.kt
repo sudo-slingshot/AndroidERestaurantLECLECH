@@ -8,7 +8,10 @@ import com.google.gson.GsonBuilder
 
 class Basket(val items: MutableList<BasketItem>): Serializable {
     fun addItem(item: Dish, quantity: Int) {
-        items.add(BasketItem(item, quantity))
+        val existingItem = items.firstOrNull { it.dish.name==item.name }
+        existingItem?.let {
+            existingItem.quantity+=quantity
+        }?: kotlin.run { items.add(BasketItem(item,quantity)) }
     }
 
     fun save(context: Context) {
