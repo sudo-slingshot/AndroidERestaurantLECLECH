@@ -2,6 +2,7 @@ package fr.isen.leclech.androiderestaurant.Detail
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.google.android.material.snackbar.Snackbar
 import fr.isen.leclech.androiderestaurant.Network.Dish
 import fr.isen.leclech.androiderestaurant.MealsActivity
 import fr.isen.leclech.androiderestaurant.databinding.ActivityDetailsBinding
@@ -60,6 +61,7 @@ class DetailActivity : AppCompatActivity() {
             currentDish?.let { dish ->
                 val basket = Basket.getBasket()
                 basket.addItem(dish, itemCount.toInt())
+                Snackbar.make(binding.root, R.string.itemAdded, Snackbar.LENGTH_LONG).show()
             }
         }
     }
