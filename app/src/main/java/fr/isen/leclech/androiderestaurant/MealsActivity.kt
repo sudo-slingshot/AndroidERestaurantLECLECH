@@ -56,6 +56,7 @@ class MealsActivity : BaseActivity() {
             intent.getSerializableExtra(HomeActivity.MEALTYPE) as? MealType ?: MealType.APPETIZERS
         binding.title.text = MealType.toString(menuchoice)
         makeRequest()
+        setupTitle()
         loadMeals()
     }
 

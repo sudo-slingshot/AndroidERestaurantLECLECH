@@ -15,6 +15,7 @@ class HomeActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
+
         setContentView(binding.root)
 
         binding.appetizers.setOnClickListener {
@@ -35,11 +36,6 @@ class HomeActivity : BaseActivity() {
             Log.e("Closure tag", "Home Activity Closed")
         }
 
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu, menu)
-        return true
     }
 
     private fun changeActivity (category: MealType){

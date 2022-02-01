@@ -21,6 +21,7 @@ class DetailActivity : BaseActivity() {
         binding = ActivityDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         currentDish = intent.getSerializableExtra(MealsActivity.SELECTED_ITEM) as? Dish
+        addToBasket()
         showcontent()
         observeClick()
         refreshShopButton()
@@ -57,12 +58,17 @@ class DetailActivity : BaseActivity() {
             refreshShopButton()
         }
 
+
+    }
+
+    private fun addToBasket() {
         binding.buttonShop.setOnClickListener {
-            // Ajoute a notre panier
             currentDish?.let { dish ->
-                val basket = Basket.getBasket()
+                val basket = Basket.getBasket(this)
                 basket.addItem(dish, itemCount.toInt())
-                Snackbar.make(binding.root, R.string.itemAdded, Snackbar.LENGTH_LONG).show()
+                basket.save(this)
+                Snackbar.make(binding.root, R.string.itemAdded, Snackbar.LENGTH_SHORT).show()
+                invalidateOptionsMenu()
             }
         }
     }
