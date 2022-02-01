@@ -4,10 +4,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
 import android.widget.Toast
 import fr.isen.leclech.androiderestaurant.databinding.ActivityHomeBinding
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : BaseActivity() {
 
     private lateinit var binding: ActivityHomeBinding
 
@@ -34,6 +35,11 @@ class HomeActivity : AppCompatActivity() {
             Log.e("Closure tag", "Home Activity Closed")
         }
 
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu, menu)
+        return true
     }
 
     private fun changeActivity (category: MealType){

@@ -3,6 +3,7 @@ package fr.isen.leclech.androiderestaurant.Detail
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
+import fr.isen.leclech.androiderestaurant.BaseActivity
 import fr.isen.leclech.androiderestaurant.Network.Dish
 import fr.isen.leclech.androiderestaurant.MealsActivity
 import fr.isen.leclech.androiderestaurant.databinding.ActivityDetailsBinding
@@ -11,7 +12,7 @@ import fr.isen.leclech.androiderestaurant.R
 import kotlin.math.max
 
 
-class DetailActivity : AppCompatActivity() {
+class DetailActivity : BaseActivity() {
     private lateinit var binding: ActivityDetailsBinding
     private var currentDish: Dish? = null
     private var itemCount = 1F

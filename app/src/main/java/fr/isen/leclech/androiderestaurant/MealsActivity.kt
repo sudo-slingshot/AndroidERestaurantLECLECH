@@ -31,7 +31,7 @@ enum class MealType{
     }
 }
 
-class MealsActivity : AppCompatActivity() {
+class MealsActivity : BaseActivity() {
 
     private lateinit var binding: ActivityMealsBinding
     private lateinit var menuchoice: MealType
