@@ -36,7 +36,7 @@ class Basket(val items: MutableList<BasketItem>): Serializable {
     }
 
     private fun updatecount(context: Context){
-        val sharedPreferences = context.getSharedPreferences(USER_PREFERENCES_NAME)
+        val sharedPreferences = context.getSharedPreferences(USER_PREFERENCES_NAME, Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
         editor.putInt(ITEMS_COUNT, itemCount)
         editor.apply()
