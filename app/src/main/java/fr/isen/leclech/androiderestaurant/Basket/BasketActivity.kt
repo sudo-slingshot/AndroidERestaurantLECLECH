@@ -4,9 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
-import fr.isen.leclech.androiderestaurant.R
 import fr.isen.leclech.androiderestaurant.databinding.ActivityBasketBinding
-import fr.isen.leclech.androiderestaurant.Basket.Basket
 import fr.isen.leclech.androiderestaurant.Registration.UserActivity
 
 class BasketActivity : AppCompatActivity() {

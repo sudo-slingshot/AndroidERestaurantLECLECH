@@ -1,13 +1,9 @@
 package fr.isen.leclech.androiderestaurant
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.Menu
-import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
-import fr.isen.leclech.androiderestaurant.Basket.Basket
 import fr.isen.leclech.androiderestaurant.Basket.BasketActivity
 import fr.isen.leclech.androiderestaurant.databinding.ActivityHomeBinding
 
