@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidERestaurant"
         android:usesCleartextTraffic="true">
+        <activity android:name=".Registration.UserActivity"/>
         <activity
             android:name=".Basket.BasketActivity"
             android:exported="false" />

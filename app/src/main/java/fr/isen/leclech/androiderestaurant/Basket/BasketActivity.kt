@@ -1,11 +1,13 @@
 package fr.isen.leclech.androiderestaurant.Basket
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import fr.isen.leclech.androiderestaurant.R
 import fr.isen.leclech.androiderestaurant.databinding.ActivityBasketBinding
 import fr.isen.leclech.androiderestaurant.Basket.Basket
+import fr.isen.leclech.androiderestaurant.Registration.UserActivity
 
 class BasketActivity : AppCompatActivity() {
     private lateinit var binding: ActivityBasketBinding
@@ -15,6 +17,10 @@ class BasketActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         loadlist()
+        binding.orderButton.setOnClickListener{
+            val intent = Intent(this, UserActivity::class.java)
+            startActivity(intent)
+        }
     }
 
 
