@@ -12,7 +12,7 @@ import fr.isen.leclech.androiderestaurant.R
 import fr.isen.leclech.androiderestaurant.databinding.CellBasketBinding
 import org.w3c.dom.Text
 
-class BasketAdapter(private val items: List<BasketItem>): RecyclerView.Adapter<BasketAdapter.BasketViewHolder>() {
+class BasketAdapter(private val items: List<BasketItem>, val deleteClickListener: (BasketItem) -> Unit): RecyclerView.Adapter<BasketAdapter.BasketViewHolder>() {
     class BasketViewHolder(binding: CellBasketBinding):RecyclerView.ViewHolder(binding.root){
         val dishname: TextView =binding.dishview
         val price: TextView=binding.price
@@ -29,6 +29,10 @@ class BasketAdapter(private val items: List<BasketItem>): RecyclerView.Adapter<B
         holder.dishname.text=basketItem.dish.name
         holder.price.text="${basketItem.dish.prices.first().price}€"
         holder.quantity.text=basketItem.quantity.toString()
+
+        holder.delete.setOnClickListener(){
+            deleteClickListener.invoke(basketItem)
+        }
         Picasso.get().load(basketItem.dish.getThumbnailURL()).placeholder(R.drawable.no_photo_white).into(holder.image)
     }
 

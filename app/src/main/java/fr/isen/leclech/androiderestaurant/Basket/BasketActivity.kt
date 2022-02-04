@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import fr.isen.leclech.androiderestaurant.R
 import fr.isen.leclech.androiderestaurant.databinding.ActivityBasketBinding
+import fr.isen.leclech.androiderestaurant.Basket.Basket
 
 class BasketActivity : AppCompatActivity() {
     private lateinit var binding: ActivityBasketBinding
@@ -16,9 +17,15 @@ class BasketActivity : AppCompatActivity() {
         loadlist()
     }
 
+
     private fun loadlist(){
-        val items=Basket.getBasket(this).items
+        val basket = Basket.getBasket(this)
+        val items=basket.items
         binding.recyclerview.layoutManager=LinearLayoutManager(this)
-        binding.recyclerview.adapter=BasketAdapter(items)
+        binding.recyclerview.adapter=BasketAdapter(items) {
+            basket.removeItem(it)
+            basket.save(this)
+            loadlist()
+        }
     }
 }

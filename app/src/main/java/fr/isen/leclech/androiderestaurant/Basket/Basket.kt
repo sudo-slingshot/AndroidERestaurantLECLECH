@@ -43,6 +43,11 @@ class Basket(val items: MutableList<BasketItem>): Serializable {
         editor.apply()
     }
 
+    fun removeItem(basketItem: BasketItem)
+    {
+        items.remove(basketItem)
+    }
+
     companion object {
         fun getBasket(context: Context): Basket {
             val jsonFile = File(context.cacheDir.absolutePath + BASKET_FILE)
