@@ -6,6 +6,9 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.widget.Toast
+import com.google.android.material.snackbar.Snackbar
+import fr.isen.leclech.androiderestaurant.Basket.Basket
+import fr.isen.leclech.androiderestaurant.Basket.BasketActivity
 import fr.isen.leclech.androiderestaurant.databinding.ActivityHomeBinding
 
 class HomeActivity : BaseActivity() {
@@ -34,6 +37,16 @@ class HomeActivity : BaseActivity() {
             //Toast.makeText(this, "Vous avez sélectionné : Menu des desserts", Toast.LENGTH_SHORT).show()
             changeActivity(MealType.DESSERTS)
             Log.e("Closure tag", "Home Activity Closed")
+        }
+
+        binding.basket.setOnClickListener(){
+            val count= getItemsCount()
+            if (count==0) {
+                Snackbar.make(binding.root, R.string.emptycart, Snackbar.LENGTH_LONG).show()
+            }else {
+                val intent = Intent(this, BasketActivity::class.java)
+                startActivity(intent)
+            }
         }
 
     }

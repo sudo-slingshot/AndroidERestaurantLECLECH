@@ -4,5 +4,18 @@
     <string name="appetizer_2">2nd Appetizer</string>
     <string name="appetizer_3">3rd Appetizer</string>
     <string name="total">Total</string>
+    <string name="greeting">Welcome back</string>
+    <string name="name">Yohann</string>
+    <string name="our_desert">Our desert</string>
+    <string name="our_dishes">Our dishes</string>
+    <string name="cart_title">Meals</string>
+    <string name="cart">Your Cart</string>
+    <color name="textColorDarken">#1A2E4C</color>
+    <string name="profile">Your Account</string>
+    <string name="profile_title">Profile</string>
     <string name="itemAdded">Votre plat a été ajouté au panier</string>
+    <string name="emptycart">Your cart is empty!</string>
+    <string name="our_entries">Our Entries</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

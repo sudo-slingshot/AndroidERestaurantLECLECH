@@ -35,7 +35,7 @@ open class BaseActivity: AppCompatActivity() {
         invalidateOptionsMenu()
     }
 
-    private fun getItemsCount(): Int {
+    fun getItemsCount(): Int {
         val sharedPreferences = getSharedPreferences(Basket.USER_PREFERENCES_NAME, Context.MODE_PRIVATE)
         return sharedPreferences.getInt(Basket.ITEMS_COUNT, 0)
     }
