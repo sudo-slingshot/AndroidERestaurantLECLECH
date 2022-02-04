@@ -51,7 +51,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="get your order\nunder 3 days"
+            android:text="get your order\nunder 1 hour"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="-3dp"
             android:textSize="20dp"/>
@@ -68,6 +68,7 @@
             <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -200,6 +201,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/cart_title"
+                    android:textColor="@color/slate_400"
                     android:textSize="25sp"
                     android:textStyle="bold"
                     android:letterSpacing="0.04"
@@ -253,6 +255,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/slate_400"
                     android:text="@string/profile_title"
                     android:textSize="25sp"
                     android:textStyle="bold"
