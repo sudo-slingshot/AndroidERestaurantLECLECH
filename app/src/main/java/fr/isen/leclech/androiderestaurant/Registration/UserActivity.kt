@@ -92,7 +92,7 @@ class UserActivity : AppCompatActivity(), UserActivityFragmentInteraction {
                 if(userResult.data != null) {
                     saveUser(userResult.data)
                 } else {
-                    Toast.makeText(this, "Logins incorrect", Toast.LENGTH_LONG).show()
+                    Snackbar.make(binding.root, R.string.loginerror, Snackbar.LENGTH_LONG).show()
                 }
             },
             { error ->
