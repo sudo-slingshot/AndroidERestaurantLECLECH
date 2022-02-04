@@ -10,8 +10,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="30dp"
         android:paddingLeft="25dp"
+        android:paddingTop="30dp"
         android:paddingRight="25dp">
 
         <TextView
@@ -19,15 +19,25 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/greeting"
-            android:textSize="20sp"/>
+            android:textSize="20sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/name"
-            android:textSize="28sp"
+            android:layout_below="@+id/tvGreeting"
             android:letterSpacing="0.04"
-            android:layout_below="@+id/tvGreeting"/>
+            android:text="@string/name"
+            android:textSize="28sp" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="159dp"
+            android:layout_height="38dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="-30dp"
+            app:srcCompat="@drawable/logo" />
 
 
     </RelativeLayout>
@@ -42,16 +52,16 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Order Now"
-            android:textSize="40dp"
-            android:textStyle="bold"
             android:layout_marginLeft="25dp"
-            android:layout_marginTop="15dp"/>
+            android:layout_marginTop="15dp"
+            android:text="Commandez"
+            android:textSize="40dp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="get your order\nunder 1 hour"
+            android:text="Et recevez votre commande \nen moins de 60 minutes"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="-3dp"
             android:textSize="20dp"/>
@@ -100,15 +110,15 @@
                                 android:layout_height="90dp"
                                 android:src="@drawable/entry"
                                 android:layout_gravity="center"/>
+
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/our_entries"
-                                android:textColor="@color/textColor"
                                 android:textAlignment="center"
+                                android:textColor="@color/white"
                                 android:textSize="22sp"
-                                android:textStyle="bold"
-                                />
+                                android:textStyle="bold" />
                         </LinearLayout>
 
 
@@ -137,12 +147,13 @@
                                 android:layout_height="90dp"
                                 android:src="@drawable/dishes"
                                 android:layout_gravity="center"/>
+
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/our_dishes"
-                                android:textColor="@color/textColor"
                                 android:textAlignment="center"
+                                android:textColor="@color/white"
                                 android:textSize="22sp"
                                 android:textStyle="bold" />
                         </LinearLayout>
@@ -173,12 +184,13 @@
                                 android:layout_height="90dp"
                                 android:src="@drawable/desert"
                                 android:layout_gravity="center"/>
+
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/our_desert"
-                                android:textColor="@color/textColor"
                                 android:textAlignment="center"
+                                android:textColor="@color/white"
                                 android:textSize="22sp"
                                 android:textStyle="bold" />
                         </LinearLayout>
@@ -229,15 +241,16 @@
                         android:layout_width="120dp"
                         android:layout_height="match_parent"
                         android:src="@drawable/cart_bg"/>
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/cart"
-                        android:textSize="40sp"
                         android:layout_gravity="center"
-                        android:textColor="@color/textColorDarken"
-                        android:textStyle="bold"
-                        android:layout_marginStart="40dp" />
+                        android:layout_marginStart="40dp"
+                        android:text="@string/cart"
+                        android:textColor="@color/white"
+                        android:textSize="40sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -283,13 +296,12 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/profile"
-                        android:textSize="40sp"
                         android:layout_gravity="center"
-                        android:textColor="@color/textColorDarken"
-                        android:textStyle="bold"
                         android:layout_marginStart="40sp"
-                        />
+                        android:text="@string/profile"
+                        android:textColor="@color/white"
+                        android:textSize="40sp"
+                        android:textStyle="bold" />
 
                     <ImageView
                         android:layout_width="120dp"

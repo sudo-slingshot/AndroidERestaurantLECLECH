@@ -243,7 +243,7 @@
     <color name="rose_900">#881337</color>
     <color name="textColor">#ECE5EC</color>
     <color name="white">#FFFFFF</color>
-
+    <color name="textColorDarken">#1A2E4C</color>
     <color name="transparent">#00FFFFFF</color>
     <color name="white_transparent">#4DB8DDB8</color>
 
