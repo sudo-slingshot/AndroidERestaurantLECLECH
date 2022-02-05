@@ -213,7 +213,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/cart_title"
-                    android:textColor="@color/slate_400"
+                    android:textColor="@color/white"
                     android:textSize="25sp"
                     android:textStyle="bold"
                     android:letterSpacing="0.04"
@@ -268,7 +268,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/slate_400"
+                    android:textColor="@color/white"
                     android:text="@string/profile_title"
                     android:textSize="25sp"
                     android:textStyle="bold"
@@ -318,7 +318,6 @@
             </androidx.cardview.widget.CardView>
 
         </LinearLayout>
-
 
     </ScrollView>
 
