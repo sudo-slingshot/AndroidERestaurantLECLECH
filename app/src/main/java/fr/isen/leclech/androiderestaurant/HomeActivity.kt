@@ -1,6 +1,7 @@
 package fr.isen.leclech.androiderestaurant
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import com.google.android.material.snackbar.Snackbar
@@ -43,6 +44,19 @@ class HomeActivity : BaseActivity() {
                 val intent = Intent(this, BasketActivity::class.java)
                 startActivity(intent)
             }
+        }
+
+        binding.mapsbutton.setOnClickListener(){
+            // Create a Uri from an intent string. Use the result to create an Intent.
+            val gmmIntentUri = Uri.parse("https://www.google.com/maps/place/ISEN+Yncr%C3%A9a+M%C3%A9diterran%C3%A9e+-+Campus+de+Toulon/@43.1206241,5.9374718,17z/data=!3m1!4b1!4m5!3m4!1s0x12c91b0a44cc26c9:0x30eab5841931dc29!8m2!3d43.1206202!4d5.9396605")
+
+            // Create an Intent from gmmIntentUri. Set the action to ACTION_VIEW
+            val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
+            // Make the Intent explicit by setting the Google Maps package
+            mapIntent.setPackage("com.google.android.apps.maps")
+
+            // Attempt to start an activity that can handle the Intent
+            startActivity(mapIntent)
         }
 
     }
