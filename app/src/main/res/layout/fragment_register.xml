@@ -112,7 +112,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="60dp"
         android:background="@color/slate_400"
-        android:text="Already a client? Login here!"
+        android:text="Déja client? Connectez vous!"
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/imageView4"
         app:layout_constraintEnd_toEndOf="parent"

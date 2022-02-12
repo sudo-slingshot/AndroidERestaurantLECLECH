@@ -16,15 +16,15 @@
     <string name="itemAdded">Votre plat a été ajouté au panier</string>
     <string name="emptycart">Votre panier est vide!</string>
     <string name="shopnow">Ajoutez votre panier</string>
-    <string name="login">Login</string>
+    <string name="login">Connexion</string>
     <string name="email">E-mail</string>
-    <string name="password">Password</string>
+    <string name="password">Mot de passe</string>
     <string name="register">Enregistrer</string>
     <string name="firstname">Nom</string>
     <string name="lastname">Prénom</string>
     <string name="placeorder">Passez votre commande</string>
-    <string name="registrationerror">Merci de remplir tous les champs</string>
-    <string name="loginerror">Credentials invalides</string>
+    <string name="registrationerror">Merci de remplir tous les champs de manière correcte</string>
+    <string name="loginerror">Identifiants invalides</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->
