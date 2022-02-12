@@ -245,6 +245,6 @@
     <color name="white">#FFFFFF</color>
     <color name="textColorDarken">#1A2E4C</color>
     <color name="transparent">#00FFFFFF</color>
-    <color name="white_transparent">#4DB8DDB8</color>
+    <color name="white_transparent">#4DB8DADD</color>
 
 </resources>
