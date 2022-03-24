@@ -1,11 +1,11 @@
-package fr.isen.leclech.androiderestaurant;
+package fr.isen.leclech.androiderestaurant
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import fr.isen.leclech.androiderestaurant.Network.Dish
-import fr.isen.leclech.androiderestaurant.databinding.CellMealBinding;
+import fr.isen.leclech.androiderestaurant.databinding.CellMealBinding
 
 
 class MealsAdapter(private val entries: List<Dish>, val itemClickListener: (Dish) -> Unit): RecyclerView.Adapter<MealsAdapter.MealsViewHolder>() {

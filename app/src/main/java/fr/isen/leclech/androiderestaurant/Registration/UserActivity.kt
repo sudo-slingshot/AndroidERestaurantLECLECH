@@ -15,8 +15,11 @@ import fr.isen.leclech.androiderestaurant.Network.NetworkConstants
 import fr.isen.leclech.androiderestaurant.Network.RegisterResult
 import fr.isen.leclech.androiderestaurant.Network.User
 import fr.isen.leclech.androiderestaurant.R
+import fr.isen.leclech.androiderestaurant.databinding.ActivityBasketBinding.bind
 import fr.isen.leclech.androiderestaurant.databinding.ActivityUserBinding
 import org.json.JSONObject
+import java.security.MessageDigest
+import java.util.Locale
 
 interface UserActivityFragmentInteraction {
     fun showLogin()
@@ -33,6 +36,13 @@ class UserActivity : AppCompatActivity(), UserActivityFragmentInteraction {
 
         val fragment = RegisterFragment()
         supportFragmentManager.beginTransaction().add(R.id.fragmentContainer, fragment).commit()
+    }
+
+    private fun hash(string: String): String {
+        val bytes = this.toString().toByteArray()
+        val md = MessageDigest.getInstance("SHA-256")
+        val digest = md.digest(bytes)
+        return digest.fold("", { str, it -> str + "%02x".format(it) })
     }
 
     fun verifyInformations(
@@ -69,6 +79,7 @@ class UserActivity : AppCompatActivity(), UserActivityFragmentInteraction {
     ) {
         val queue = Volley.newRequestQueue(this)
         var path = NetworkConstants.PATH_REGISTER
+        var hashpassword = hash(password.toString())
         if(fromLogin) {
             path = NetworkConstants.PATH_LOGIN
         }
@@ -77,7 +88,7 @@ class UserActivity : AppCompatActivity(), UserActivityFragmentInteraction {
         val jsonData = JSONObject()
         jsonData.put(NetworkConstants.ID_SHOP, "1")
         jsonData.put(NetworkConstants.EMAIL, email)
-        jsonData.put(NetworkConstants.PASSWORD, password)
+        jsonData.put(NetworkConstants.PASSWORD, hashpassword)
         if(!fromLogin) {
             jsonData.put(NetworkConstants.FIRSTNAME, firstname)
             jsonData.put(NetworkConstants.LASTNAME, lastname)
@@ -97,23 +108,25 @@ class UserActivity : AppCompatActivity(), UserActivityFragmentInteraction {
             },
             { error ->
                 error.message?.let {
-                    Log.d("request", it)
+
                 } ?: run {
-                    Log.d("request", error.toString())
-                    Log.d("request", String(error.networkResponse.data))
+
+
                 }
             }
         )
+
         queue.add(request)
+
     }
 
     fun saveUser(user: User) {
-        val sharedPreferences = getSharedPreferences(USER_PREFERENCES_NAME, Context.MODE_PRIVATE)
+        val sharedPreferences = getSharedPreferences(USER_PREFERENCES_NAME, MODE_PRIVATE)
         val editor = sharedPreferences.edit()
         editor.putInt(ID_USER, user.id)
         editor.apply()
 
-        setResult(Activity.RESULT_FIRST_USER)
+        setResult(RESULT_FIRST_USER)
         finish()
     }
 

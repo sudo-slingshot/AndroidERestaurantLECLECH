@@ -12,7 +12,7 @@ class Basket(val items: MutableList<BasketItem>): Serializable {
 
         return items.map {
             it.quantity
-        }.reduceOrNull() { acc, i -> acc+i }?:0
+        }.reduceOrNull { acc, i -> acc+i }?:0
 
     }
 
@@ -64,4 +64,4 @@ class Basket(val items: MutableList<BasketItem>): Serializable {
     }
 }
 
-class BasketItem(val dish: Dish, var quantity: Int): Serializable {}
+class BasketItem(val dish: Dish, var quantity: Int): Serializable

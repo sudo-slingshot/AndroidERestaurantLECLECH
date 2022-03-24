@@ -30,7 +30,7 @@ class BasketAdapter(private val items: List<BasketItem>, val deleteClickListener
         holder.price.text="${basketItem.dish.prices.first().price}€"
         holder.quantity.text=basketItem.quantity.toString()
 
-        holder.delete.setOnClickListener(){
+        holder.delete.setOnClickListener {
             deleteClickListener.invoke(basketItem)
         }
         Picasso.get().load(basketItem.dish.getThumbnailURL()).placeholder(R.drawable.no_photo_white).into(holder.image)

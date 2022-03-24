@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import fr.isen.leclech.androiderestaurant.R
 import fr.isen.leclech.androiderestaurant.databinding.FragmentLoginBinding
+import fr.isen.leclech.androiderestaurant.Registration.UserActivity
 
 class LoginFragment : Fragment() {
     lateinit var binding: FragmentLoginBinding

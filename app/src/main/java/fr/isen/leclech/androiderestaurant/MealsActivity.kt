@@ -39,7 +39,7 @@ class MealsActivity : BaseActivity() {
     private fun loadMeals() {
         val fakentries = listOf<Dish>()
         val adapter = MealsAdapter(fakentries) { selectedItem ->
-            Log.d("Meals", "GG!")
+
         }
         binding.MealsRecyclerView.layoutManager = LinearLayoutManager(this)
         binding.MealsRecyclerView.adapter = adapter
@@ -71,11 +71,11 @@ class MealsActivity : BaseActivity() {
             url,
             parameters,
             {
-                //Log.d("volley", "${it.toString(2)}")
+
                 parseresult(it.toString())
             },
             {
-                Log.d("Volley error", "$it")
+
             }
         )
 

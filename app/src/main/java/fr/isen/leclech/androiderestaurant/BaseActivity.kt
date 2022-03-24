@@ -2,15 +2,16 @@ package fr.isen.leclech.androiderestaurant
 
 import android.content.Context
 import android.content.Intent
-import android.util.Log
 import android.view.Menu
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.google.android.material.snackbar.Snackbar
+import com.scottyab.rootbeer.RootBeer
 import fr.isen.leclech.androiderestaurant.Basket.Basket
 import fr.isen.leclech.androiderestaurant.Basket.BasketActivity
-import fr.isen.leclech.androiderestaurant.databinding.ActivityHomeBinding
+import java.io.File
+
 
 open class BaseActivity: AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -20,7 +21,7 @@ open class BaseActivity: AppCompatActivity() {
         val countText=menuView?.findViewById(R.id.itemCount) as? TextView
         val count = getItemsCount()
         countText?.isVisible=count>0
-        Log.d("Count", count.toString())
+
         countText?.text=count.toString()
 
         menuView?.setOnClickListener {
@@ -36,6 +37,9 @@ open class BaseActivity: AppCompatActivity() {
     }
 
     override fun onResume() {
+        if (RootBeer(this).isRooted) {
+            finish()
+        }
         super.onResume()
         invalidateOptionsMenu()
     }
